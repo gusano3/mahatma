@@ -59,6 +59,9 @@ enableRobotsTXT = true
     layout = "contacto"
     title = "Contacto"
 
+[minify]
+  minifyOutput = true
+
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
