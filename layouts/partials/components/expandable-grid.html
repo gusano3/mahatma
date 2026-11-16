@@ -7,8 +7,8 @@
     border: none;
     border-radius: 8px;
     padding: 20px;
-    width: 90%;
-    max-width: 500px;
+    width: 90vw;
+    max-width: 900px;
     max-height: 90vh;
     overflow: auto;
     overscroll-behavior: contain;
@@ -26,6 +26,46 @@
     min-width: 44px;
     min-height: 44px;
     font-size: 1rem;
+  }
+
+  .modal-side-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    width: 44px;
+    height: 44px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.45);
+    color: #fff;
+    font-size: 1.6rem;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease;
+  }
+
+  .modal-side-nav:hover {
+    background: rgba(0, 0, 0, 0.7);
+  }
+
+  .modal-side-prev {
+    left: 8px;
+  }
+
+  .modal-side-next {
+    right: 8px;
+  }
+
+  @media (max-width: 480px) {
+    .modal-side-nav {
+      width: 36px;
+      height: 36px;
+      font-size: 1.3rem;
+    }
   }
 </style>
 
@@ -102,10 +142,13 @@
                   {{ if $item.gallery }}
                     {{ range $index, $imgUrl := $item.gallery }}
                       <div class="slide-{{ $item.title | urlize }}" data-index="{{ $index }}" style="{{ if gt $index 0 }}display:none;{{ end }}">
-                        <img src="{{ $imgUrl | relURL }}" alt="{{ $item.title }} - foto {{ add $index 1 }} de {{ len $item.gallery }}" style="max-width:100%; max-height:350px; object-fit:contain; border-radius:4px;">
+                        <img src="{{ $imgUrl | relURL }}" alt="{{ $item.title }} - foto {{ add $index 1 }} de {{ len $item.gallery }}" style="max-width:100%; max-height:70vh; object-fit:contain; border-radius:4px;">
                         <p style="font-size:12px; margin-top:5px; color:var(--color-muted);">{{ add $index 1 }} / {{ len $item.gallery }}</p>
                       </div>
                     {{ end }}
+                    <button type="button" class="modal-side-nav modal-side-prev" onclick="changeSlide('{{ $item.title | urlize }}', -1)" aria-label="Foto anterior">&#8249;</button>
+                    <button type="button" class="modal-side-nav modal-side-next" onclick="changeSlide('{{ $item.title | urlize }}', 1)" aria-label="Foto siguiente">&#8250;</button>
+
 
                     <div style="display:flex; justify-content: space-between; margin-top:10px;">
                       <button type="button" onclick="changeSlide('{{ $item.title | urlize }}', -1)" class="modal-nav-btn" style="padding:5px 15px; cursor:pointer; background:var(--color-surface-muted); border:1px solid var(--color-surface-muted); border-radius:4px; color:var(--color-text); font-family: inherit; font-weight: 500;">&larr; Ant</button>
@@ -113,7 +156,7 @@
                     </div>
                   {{ else }}
                     <div>
-                      <img src="{{ $item.image | relURL }}" alt="{{ $item.title }}" style="max-width:100%; max-height:350px; object-fit:contain; border-radius:4px;">
+                      <img src="{{ $item.image | relURL }}" alt="{{ $item.title }}" style="max-width:100%; max-height:70vh; object-fit:contain; border-radius:4px;">
                     </div>
                   {{ end }}
                 </div>

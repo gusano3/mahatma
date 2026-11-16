@@ -19,7 +19,7 @@ enableRobotsTXT = true
   disableHomeLink = true
 
 [params.homepage]
-  sections = ["banner", "nuestros-hogares", "nosotros", "staff", "empleadx", "contacto"]
+  sections = ["banner", "nuestros-hogares", "servicios", "staff", "empleadx", "contacto"]
 
   [params.homepage.banner]
     enable = true
@@ -32,10 +32,10 @@ enableRobotsTXT = true
     layout = "nuestros-hogares"
     title = "Nuestros Hogares"
 
-  [params.homepage.nosotros]
+  [params.homepage.servicios]
     enable = true
-    layout = "nosotros"
-    title = "Nosotros"
+    layout = "servicios"
+    title = "Servicios"
 
   [params.homepage.staff]
     enable = true
@@ -94,8 +94,8 @@ enableRobotsTXT = true
 
 
 [[menus.main]]
-  name = "Nosotros"
-  url = "/#hero"
+  name = "Servicios"
+  url = "/#servicios"
   weight = 2
 
 [[menus.main]]
