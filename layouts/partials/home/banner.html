@@ -4,16 +4,20 @@
   <div class="swiper hero-swiper">
     <div class="swiper-wrapper">
       <div class="swiper-slide">
-        <img src="{{ "images/highlight/DSC09827.jpg" | relURL }}" alt="Centros Geriátricos Mahatma" class="hero-banner-bg">
+        {{ $hero0 := resources.Get "images/highlight/DSC09827.jpg" }}{{ if $hero0 }}{{ $hero0 = $hero0.Resize "1920x q80 webp" }}{{ end }}
+        <img src="{{ if $hero0 }}{{ $hero0.RelPermalink }}{{ else }}{{ "images/highlight/DSC09827.jpg" | relURL }}{{ end }}" alt="Centros Geriátricos Mahatma" class="hero-banner-bg">
       </div>
       <div class="swiper-slide">
-        <img src="{{ "images/highlight/DSC09842.jpg" | relURL }}" alt="Centros Geriátricos Mahatma" class="hero-banner-bg">
+        {{ $hero1 := resources.Get "images/highlight/DSC09842.jpg" }}{{ if $hero1 }}{{ $hero1 = $hero1.Resize "1920x q80 webp" }}{{ end }}
+        <img src="{{ if $hero1 }}{{ $hero1.RelPermalink }}{{ else }}{{ "images/highlight/DSC09842.jpg" | relURL }}{{ end }}" alt="Centros Geriátricos Mahatma" class="hero-banner-bg">
       </div>
       <div class="swiper-slide">
-        <img src="{{ "images/highlight/DSC09857.jpg" | relURL }}" alt="Centros Geriátricos Mahatma" class="hero-banner-bg">
+        {{ $hero2 := resources.Get "images/highlight/DSC09857.jpg" }}{{ if $hero2 }}{{ $hero2 = $hero2.Resize "1920x q80 webp" }}{{ end }}
+        <img src="{{ if $hero2 }}{{ $hero2.RelPermalink }}{{ else }}{{ "images/highlight/DSC09857.jpg" | relURL }}{{ end }}" alt="Centros Geriátricos Mahatma" class="hero-banner-bg">
       </div>
       <div class="swiper-slide">
-        <img src="{{ "images/highlight/DSC09882.jpg" | relURL }}" alt="Centros Geriátricos Mahatma" class="hero-banner-bg">
+        {{ $hero3 := resources.Get "images/highlight/DSC09882.jpg" }}{{ if $hero3 }}{{ $hero3 = $hero3.Resize "1920x q80 webp" }}{{ end }}
+        <img src="{{ if $hero3 }}{{ $hero3.RelPermalink }}{{ else }}{{ "images/highlight/DSC09882.jpg" | relURL }}{{ end }}" alt="Centros Geriátricos Mahatma" class="hero-banner-bg">
       </div>
     </div>
   </div>
