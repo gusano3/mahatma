@@ -19,7 +19,7 @@ enableRobotsTXT = true
   disableHomeLink = true
 
 [params.homepage]
-  sections = ["banner", "nuestros-hogares", "servicios", "staff", "empleadx", "contacto"]
+  sections = ["banner", "nuestros-hogares", "servicios", "staff", "empleadx", "reviews", "contacto"]
 
   [params.homepage.banner]
     enable = true
@@ -47,7 +47,13 @@ enableRobotsTXT = true
     layout = "empleadx"
     title = ""
     showInMenu = false
-  
+
+  [params.homepage.reviews]
+    enable = true
+    layout = "reviews"
+    title = "Lo que dicen de nosotros"
+    showInMenu = false
+
   [params.homepage.contacto]
     enable = true
     layout = "contacto"
