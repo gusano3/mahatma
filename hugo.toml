@@ -19,7 +19,7 @@ enableRobotsTXT = true
   disableHomeLink = true
 
 [params.homepage]
-  sections = ["banner", "nuestros-hogares", "servicios", "staff", "empleadx", "reviews", "contacto"]
+  sections = ["banner", "nuestros-hogares", "reviews", "servicios", "staff", "empleadx", "contacto"]
 
   [params.homepage.banner]
     enable = true
